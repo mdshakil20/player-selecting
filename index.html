@@ -136,26 +136,25 @@
                     <h1 class=" text-xl text-center py-5 text-white font-semibold text-orange-500">Budget</h1>
                     <div class=" mx-3 inputFieldWithHeading grid gap-4 grid-cols-2  ">
                         <h4 class="text-base mt-1 text-slate-400">Per Player</h4>
-                        <input type="text" class="bg-black text-white h-8 border-2 border-white" name="" id="">
+                        <input type="text" id="perPlayer" class="bg-black text-white h-8 border-2 border-white" name="" id="">
                     </div>
-                    <button
-                        class="bg-blue-500 w-11/12 ml-3 hover:bg-blue-700 text-white font-semibold  py-1 mb-5 mt-4 ">
+                    <button id="calculate" class="bg-blue-500 w-11/12 ml-3 hover:bg-blue-700 text-white font-semibold  py-1 mb-5 mt-4 ">
                         Calculate </button>
-                    <h4 class="text-white ml-3 pb-5">Player Expenses <span class="m-5">$<span>5000</span> </span></h4>
+                    <h4 class="text-white ml-3 pb-5">Player Expenses <span class="m-5">$ <span id="playerExpense"> 00</span> </span></h4>
                     <div class=" mx-3 mt-5 inputFieldWithHeading grid gap-4 grid-cols-2  ">
                         <h4 class="text-base mt-1 text-slate-400">Manager</h4>
-                        <input type="text" class="bg-black text-white h-8 border-2 border-white" name="" id="">
+                        <input type="text" class="bg-black text-white h-8 border-2 border-white" name="" id="managerInputField">
                     </div>
                     <div class=" mx-3 mt-5 inputFieldWithHeading grid gap-4 grid-cols-2  ">
                         <h4 class="text-base mt-1 text-slate-400">Coach </h4>
-                        <input type="text" class="bg-black text-white h-8 border-2 border-white" name="" id="">
+                        <input type="text" class="bg-black text-white h-8 border-2 border-white" name="" id="coachInputField">
                     </div>
-                    <button
+                    <button id="total_calculate"
                         class="bg-blue-500 w-11/12 ml-3 hover:bg-blue-700 text-white font-semibold  py-1 mb-5 mt-4 ">
                         Calculate Total</button>
                     <div class="flex">
                         <h4 class="text-white ml-3 pb-5 w-1/2">Total </h4>
-                        <h4 class=" text-orange-500 font-bold w-1/2 place-items-end">$<span>5000</span> </h4>
+                        <h4 class=" text-orange-500 font-bold w-1/2 place-items-end">$ <span id="total_expense">00</span> </h4>
                     </div>
                 </div>
             </div>
