@@ -1,4 +1,4 @@
-
+//for get player list
 let child = 0;
 
 //button disable  function
@@ -8,8 +8,8 @@ function btnDisable(btnId) {
 }
 
 //this function selecting only 5 players
-function getAndPutName(playerNameId, btnId) {
-    const playerName = document.getElementById(playerNameId).innerText;
+function getAndPutName(playerNameId,btnId) {
+    const playerName = playerNameId;
     const li = document.createElement('li');
     li.innerText = playerName;
     const PlayerListParent = document.getElementById('selectedPlayers');
@@ -28,7 +28,6 @@ function getAndPutName(playerNameId, btnId) {
     else if (PlayerListParent.childElementCount >= 5) {
         alert("You already selecte 5 players. You can't select any more.");
     }
-
 }
 
 //get input value
@@ -39,50 +38,12 @@ function getInputValue(InputFieldId) {
     return inputValue;
 }
 
-//when select1 button is clicked
-document.getElementById('selectBtn1').addEventListener('click', function () {
-    getAndPutName('player1', 'selectBtn1');
-});
-
-//when select2 button is clicked
-document.getElementById('selectBtn2').addEventListener('click', function () {
-    getAndPutName('player2', 'selectBtn2');
-});
-
-//when select3 button is clicked
-document.getElementById('selectBtn3').addEventListener('click', function () {
-    getAndPutName('player3', 'selectBtn3');
-});
-
-//when select4 button is clicked
-document.getElementById('selectBtn4').addEventListener('click', function () {
-    getAndPutName('player4', 'selectBtn4');
-});
-
-//when select5 button is clicked
-document.getElementById('selectBtn5').addEventListener('click', function () {
-    getAndPutName('player5', 'selectBtn5');
-});
-
-//when select6 button is clicked
-document.getElementById('selectBtn6').addEventListener('click', function () {
-    getAndPutName('player6', 'selectBtn6');
-});
-
-//when select7 button is clicked
-document.getElementById('selectBtn7').addEventListener('click', function () {
-    getAndPutName('player7', 'selectBtn7');
-});
-
-//when select8 button is clicked
-document.getElementById('selectBtn8').addEventListener('click', function () {
-    getAndPutName('player8', 'selectBtn8');
-});
-
-//when select9 button is clicked
-document.getElementById('selectBtn9').addEventListener('click', function () {
-    getAndPutName('player9', 'selectBtn9');
-});
+//when select button is clicked
+function select(event){
+    const id = event.id;
+    const playerName = event.parentNode.children[1].innerText;
+    getAndPutName(playerName,id);
+}
 
 //total player cost calculating and put the value
 document.getElementById('calculate').addEventListener('click', function () {
