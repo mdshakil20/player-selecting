@@ -1,7 +1,6 @@
 
 let child = 0;
 
-
 //button disable  function
 function btnDisable(btnId) {
     document.getElementById(btnId).disabled = true;
@@ -15,7 +14,7 @@ function getAndPutName(playerNameId, btnId) {
     li.innerText = playerName;
     const PlayerListParent = document.getElementById('selectedPlayers');
 
-    if (PlayerListParent.childElementCount < 4){
+    if (PlayerListParent.childElementCount < 4) {
         PlayerListParent.appendChild(li);
         btnDisable(btnId);
         child++;
@@ -26,14 +25,11 @@ function getAndPutName(playerNameId, btnId) {
         btnDisable(btnId);
         child++;
     }
-    else if(PlayerListParent.childElementCount >= 5){
+    else if (PlayerListParent.childElementCount >= 5) {
         alert("You already selecte 5 players. You can't select any more.");
     }
 
 }
-
-
-
 
 //get input value
 function getInputValue(InputFieldId) {
@@ -45,56 +41,74 @@ function getInputValue(InputFieldId) {
 
 //when select1 button is clicked
 document.getElementById('selectBtn1').addEventListener('click', function () {
-    getAndPutName('player1','selectBtn1');
+    getAndPutName('player1', 'selectBtn1');
 });
 
 //when select2 button is clicked
 document.getElementById('selectBtn2').addEventListener('click', function () {
-    getAndPutName('player2','selectBtn2');
+    getAndPutName('player2', 'selectBtn2');
 });
 
 //when select3 button is clicked
 document.getElementById('selectBtn3').addEventListener('click', function () {
-   getAndPutName('player3','selectBtn3');
+    getAndPutName('player3', 'selectBtn3');
 });
 
 //when select4 button is clicked
 document.getElementById('selectBtn4').addEventListener('click', function () {
-    getAndPutName('player4','selectBtn4');
+    getAndPutName('player4', 'selectBtn4');
 });
 
 //when select5 button is clicked
 document.getElementById('selectBtn5').addEventListener('click', function () {
-    getAndPutName('player5','selectBtn5');
+    getAndPutName('player5', 'selectBtn5');
 });
 
 //when select6 button is clicked
 document.getElementById('selectBtn6').addEventListener('click', function () {
-    getAndPutName('player6','selectBtn6');
+    getAndPutName('player6', 'selectBtn6');
 });
+
+//when select7 button is clicked
 document.getElementById('selectBtn7').addEventListener('click', function () {
-    getAndPutName('player7','selectBtn7');
+    getAndPutName('player7', 'selectBtn7');
 });
+
+//when select8 button is clicked
 document.getElementById('selectBtn8').addEventListener('click', function () {
-    getAndPutName('player8','selectBtn8');
+    getAndPutName('player8', 'selectBtn8');
 });
+
+//when select9 button is clicked
 document.getElementById('selectBtn9').addEventListener('click', function () {
-    getAndPutName('player9','selectBtn9');
+    getAndPutName('player9', 'selectBtn9');
 });
 
 //total player cost calculating and put the value
 document.getElementById('calculate').addEventListener('click', function () {
     const perPlayerCost = getInputValue('perPlayer');
-    const playersExpense = perPlayerCost * child;
-    document.getElementById('playerExpense').innerText = playersExpense;
+    if (perPlayerCost > 0) {
+        const playersExpense = perPlayerCost * child;
+        document.getElementById('playerExpense').innerText = playersExpense;
+    }
+    else 
+    {
+        alert("Please enter a valid number.");
+    }
+
 });
 
 //total cost calculating and put the value
 document.getElementById('total_calculate').addEventListener('click', function () {
     const managerCost = getInputValue('managerInputField');
     const coachCost = getInputValue('coachInputField');
-    const totalPlayersCostSting =  document.getElementById('playerExpense').innerText;
+    if (managerCost > 0 &&  coachCost > 0) {
+    const totalPlayersCostSting = document.getElementById('playerExpense').innerText;
     const totalPlayersCost = parseFloat(totalPlayersCostSting);
     const total = managerCost + coachCost + totalPlayersCost;
     document.getElementById('total_expense').innerText = total;
+    }
+    else {
+        alert("Please enter a valid number.");
+    }
 });
