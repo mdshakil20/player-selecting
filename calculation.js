@@ -72,6 +72,15 @@ document.getElementById('selectBtn5').addEventListener('click', function () {
 document.getElementById('selectBtn6').addEventListener('click', function () {
     getAndPutName('player6','selectBtn6');
 });
+document.getElementById('selectBtn7').addEventListener('click', function () {
+    getAndPutName('player7','selectBtn7');
+});
+document.getElementById('selectBtn8').addEventListener('click', function () {
+    getAndPutName('player8','selectBtn8');
+});
+document.getElementById('selectBtn9').addEventListener('click', function () {
+    getAndPutName('player9','selectBtn9');
+});
 
 //total player cost calculating and put the value
 document.getElementById('calculate').addEventListener('click', function () {
